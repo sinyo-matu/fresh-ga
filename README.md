@@ -10,7 +10,7 @@ fresh-ga is a [Fresh Framework](https://fresh.deno.dev/) plugin. It helps you to
 // in your import_map.json
 {
   "imports": {
-    "ga": "https://deno.land/x/fresh-ga@0.1.0/"
+    "ga/": "https://deno.land/x/fresh-ga@0.1.0/"
   }
 }
 ```
