@@ -1,12 +1,11 @@
-import { Plugin } from "$fresh/server.ts";
-import { PluginRenderContext } from "$fresh/src/server/types.ts";
+import { Plugin, PluginAsyncRenderContext } from "$fresh/server.ts";
 
 export function gaPlugin(config: GaConfig): Plugin {
   return {
     name: "fresh_ga",
     entrypoints: { main: import.meta.resolve("./plugin.ts") },
-    render(ctx: PluginRenderContext) {
-      ctx.render();
+    async renderAsync(ctx: PluginAsyncRenderContext) {
+      await ctx.renderAsync();
       return {
         scripts: [
           {
