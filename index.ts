@@ -1,4 +1,5 @@
 import { Plugin, PluginAsyncRenderContext } from "$fresh/server.ts";
+import { serverGa } from "./middleware/ga.ts";
 
 export function gaPlugin(config: GaConfig): Plugin {
   return {
@@ -10,14 +11,24 @@ export function gaPlugin(config: GaConfig): Plugin {
         scripts: [
           {
             entrypoint: "main",
-            state: config,
+            state: {},
           },
         ],
       };
     },
+    middlewares: config.enableServerGa
+      ? [
+          {
+            path: "/*",
+            middleware: {
+              handler: serverGa,
+            },
+          },
+        ]
+      : undefined,
   };
 }
 
 export interface GaConfig {
-  gaKey: string;
+  enableServerGa: boolean;
 }

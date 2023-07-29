@@ -10,9 +10,17 @@ fresh-ga is a [Fresh Framework](https://fresh.deno.dev/) plugin. It helps you to
 // in your import_map.json
 {
   "imports": {
-    "ga/": "https://deno.land/x/fresh-ga@0.1.0/"
+    "ga/": "https://deno.land/x/fresh-ga@0.1.4/"
   }
 }
+```
+
+### set GA_TRACKING_ID Environment Variable
+
+```env
+# in your .env
+GA_TRACKING_ID=G-XXXXXXXXX-X
+
 ```
 
 ### setup your main.ts
@@ -24,7 +32,7 @@ import { gaPlugin } from "ga/mod.ts";
 await start(manifest, {
   plugins: [
     // ...
-    gaPlugin({ gaKey: "xxxxxxxxxx" }), //replace xxxxxxxxx with your gaKey
+    gaPlugin({ enableServerGa: true }), // if you want to use server side ga
     // ...
   ],
 });

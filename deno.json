@@ -1,6 +1,9 @@
 {
-  "importMap": "./import_map.json",
   "compilerOptions": {
     "lib": ["deno.window", "dom"]
+  },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.3.1/",
+    "$g_a": "https://deno.land/x/g_a@0.1.2/mod.ts"
   }
 }
