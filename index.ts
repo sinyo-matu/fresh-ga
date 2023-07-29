@@ -1,7 +1,7 @@
 import { Plugin, PluginAsyncRenderContext } from "$fresh/server.ts";
 import { serverGa } from "./middleware/ga.ts";
 
-export function gaPlugin(config: GaConfig): Plugin {
+export function gaPlugin(config: GaConfig = { enableServerGa: false }): Plugin {
   return {
     name: "fresh_ga",
     entrypoints: { main: import.meta.resolve("./plugin.ts") },

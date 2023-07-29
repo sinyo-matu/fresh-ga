@@ -1,5 +1,5 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { createReporter } from "$g_a";
+import { createReporter } from "https://deno.land/x/g_a@0.1.2/mod.ts";
 
 const reporter = createReporter();
 export async function serverGa(req: Request, ctx: MiddlewareHandlerContext) {
