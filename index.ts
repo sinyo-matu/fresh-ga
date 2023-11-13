@@ -4,6 +4,11 @@ const GA_TRACKING_ID = "GA_TRACKING_ID";
 
 export function gaPlugin(config: GaConfig = { enableServerGa: false }): Plugin {
   const gaTrackingId = Deno.env.get(GA_TRACKING_ID);
+  if (!gaTrackingId) {
+    throw new Error(
+      `Missing env variable ${GA_TRACKING_ID}. Please set it to your Google Analytics tracking ID.`
+    );
+  }
   return {
     name: "fresh_ga",
     entrypoints: { main: import.meta.resolve("./plugin.ts") },
