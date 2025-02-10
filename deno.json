@@ -8,6 +8,6 @@
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.1/",
-    "$ga": "https://deno.land/x/g_a@0.1.2/mod.ts"
+    "$ga/": "https://deno.land/x/g_a@0.1.2/"
   }
 }
