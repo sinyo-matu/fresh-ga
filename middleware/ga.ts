@@ -1,8 +1,8 @@
-import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { createReporter } from "https://deno.land/x/g_a@0.1.2/mod.ts";
+import type { FreshContext } from "$fresh/server.ts";
+import { createReporter } from "$ga";
 
 const reporter = createReporter();
-export async function serverGa(req: Request, ctx: MiddlewareHandlerContext) {
+export async function serverGa(req: Request, ctx: FreshContext) {
   const start = performance.now();
   let res: Response;
   let err;
