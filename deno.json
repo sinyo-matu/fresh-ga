@@ -7,7 +7,6 @@
     "lib": ["deno.window", "dom"]
   },
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.7.1/",
-    "$ga/": "https://deno.land/x/g_a@0.1.2/"
+    "$fresh/": "https://deno.land/x/fresh@1.7.1/"
   }
 }
